@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Annas personīgā vietne ar biogrāfiju, citātiem un galeriju." />
+  <title data-i18n="title">Annas biogrāfija</title>
+  <link rel="preload" href="main2.css" as="style" />
+  <link rel="stylesheet" href="main2.css" />
+</head>
+<body class="light-theme">
+  <header>
+    <h1 data-i18n="title">Annas biogrāfija</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home'); return false;" data-i18n="nav.home" role="button" tabindex="0">Sākums</a></li>
+        <li><a href="#" onclick="showSection('about'); return false;" data-i18n="nav.about" role="button" tabindex="0">Par mani</a></li>
+        <li><a href="#" onclick="showSection('quotes'); return false;" data-i18n="nav.quotes" role="button" tabindex="0">Citāti</a></li>
+        <li><a href="#" onclick="showSection('gallery'); return false;" data-i18n="nav.gallery" role="button" tabindex="0">Galerija</a></li>
+        <li><a href="#" onclick="showSection('contacts'); return false;" data-i18n="nav.contacts" role="button" tabindex="0">Kontakti</a></li>
+      </ul>
+    </nav>
+    <div class="controls">
+      <button class="lang-button" data-lang="lv" aria-label="Latviešu valoda">LV</button>
+      <button class="lang-button" data-lang="ru" aria-label="Krievu valoda">RU</button>
+      <button class="lang-button" data-lang="en" aria-label="Angļu valoda">EN</button>
+      <button id="toggle-theme" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section active" tabindex="0">
+      <h2 data-i18n="home.welcome">Sveicināti!</h2>
+      <p data-i18n="home.description">Šī ir mana personīgā lapa par mani, maniem hobijiem un iedvesmojošām domām.</p>
+    </section>
+
+    <section id="about" class="section" tabindex="0">
+      <h2 data-i18n="about.title">Par mani</h2>
+      <div class="about-container">
+        <div class="about-box">
+          <h3 data-i18n="about.who.heading">👩‍🎓 Kas es esmu?</h3>
+          <p data-i18n="about.who.text">Mani sauc Anna, man ir 17 gadi. Esmu atbildīga un zinātkāra meitene, kuru aizrauj tehnoloģijas, valodas un radošums.</p>
+        </div>
+        <div class="about-box">
+          <h3 data-i18n="about.education.heading">🏫 Izglītība</h3>
+          <p data-i18n="about.education.text">Es mācos Rīgas Tehniskajā koledžā, programmēšanas tehnoloģiju specialitātē. Apgūstu Python, Java un C++.</p>
+        </div>
+        <div class="about-box">
+          <h3 data-i18n="about.languages.heading">🌍 Valodas</h3>
+          <p data-i18n="about.languages.text">Es aktīvi mācos angļu valodu un interesējos par citu valodu apguvi. Tas ir svarīgi nākotnes karjerai IT jomā.</p>
+        </div>
+        <div class="about-box">
+          <h3 data-i18n="about.hobbies.heading">🏊‍♀️ Hobiji</h3>
+          <p data-i18n="about.hobbies.text">Vairāk nekā 10 gadus nodarbojos ar peldēšanu. Mani iecienītākie stili ir kraulā un delfīnā.</p>
+        </div>
+        <div class="about-box">
+          <h3 data-i18n="about.fashion.heading">🧥 Mode un stils</h3>
+          <p data-i18n="about.fashion.text">Man patīk mode un stils — tas ir veids, kā izpaust savu personību.</p>
+        </div>
+        <div class="about-box">
+          <h3 data-i18n="about.goals.heading">💻 Nākotnes mērķi</h3>
+          <p data-i18n="about.goals.text">Vēlos kļūt par testētāju vai izstrādātāju un radīt noderīgas lietotnes. Es ticu neatlaidībai un vēlmei mācīties.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="section" tabindex="0">
+      <h2 data-i18n="quotes.title">Citāti</h2>
+      <div class="quotes-container">
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" data-i18n="quotes.lionKing">
+              <p>"Hakuna Matata! It means no worries."</p>
+            </div>
+            <div class="flip-card-back">
+              <img src="img/lionking.webp" alt="The Lion King" width="400" height="320" decoding="async" loading="lazy" />
+              <p>The Lion King, 1994</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" data-i18n="quotes.kungFuPanda">
+              <p>"The only thing that matters is what you choose to be now."</p>
+            </div>
+            <div class="flip-card-back">
+              <img src="img/kunfu.webp" alt="Kung Fu Panda" width="400" height="320" decoding="async" loading="lazy" />
+              <p>Kung Fu Panda, 2008</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" data-i18n="quotes.cinderella">
+              <p>"Well, there’s one thing: they can’t order me to stop dreaming."</p>
+            </div>
+            <div class="flip-card-back">
+              <img src="img/cinderella.webp" alt="Cinderella" width="400" height="320" decoding="async" loading="lazy" />
+              <p>Cinderella, 1950</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" data-i18n="quotes.wallE">
+              <p>"I don’t want to survive. I want to live."</p>
+            </div>
+            <div class="flip-card-back">
+              <img src="img/Walle.webp" alt="WALL-E" width="400" height="320" decoding="async" loading="lazy" />
+              <p>WALL-E, 2008</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" data-i18n="quotes.liloStitch">
+              <p>"Ohana means family. Family means nobody gets left behind or forgotten."</p>
+            </div>
+            <div class="flip-card-back">
+              <img src="img/liloandstich.webp" alt="Lilo & Stitch" width="400" height="320" decoding="async" loading="lazy" />
+              <p>Lilo & Stitch, 2002</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" data-i18n="quotes.ratatouille">
+              <p>"The only thing predictable about life is its unpredictability."</p>
+            </div>
+            <div class="flip-card-back">
+              <img src="img/ratatoil.webp" alt="Ratatouille" width="400" height="320" decoding="async" loading="lazy" />
+              <p>Ratatouille, 2007</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section" tabindex="0">
+      <h2 data-i18n="gallery.title">Galerija</h2>
+      <div class="gallery-grid">
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo1.webp" alt="Foto 1" width="400" height="320" decoding="async" loading="lazy" />
+            </div>
+            <div class="flip-card-back">
+              <p data-i18n="gallery.descriptions.photo1">Отпуск у моря — то, что нужно.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo2.webp" alt="Foto 2" width="400" height="320" decoding="async" loading="lazy" />
+            </div>
+            <div class="flip-card-back">
+              <p data-i18n="gallery.descriptions.photo2">Гуляю по любимому городу.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card third-card" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo3.webp" alt="Foto 3" width="400" height="320" decoding="async" loading="lazy" />
+            </div>
+            <div class="flip-card-back">
+              <p data-i18n="gallery.descriptions.photo3">Плавание — мой элемент.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section" tabindex="0">
+      <h2 data-i18n="contacts.title">Kontakti</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/anna.komova_/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://github.com/ann335" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+     
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div id="visitor-counter" data-i18n="footer.visits"></div>
+    <p>© <span id="year"></span> Anna. All rights reserved.</p>
+  </footer>
+
+  <script src="app2.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+/* ===== Общие сбросы и шрифты ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff0f6;
+  color: #330022;
+}
+
+/* ===== Темы ===== */
+body.light-theme {
+  background: #fff0f6;
+  color: #330022;
+}
+
+body.dark-theme {
+  background: #220117;
+  color: #ffe6f0;
+}
+
+/* ===== Хедер ===== */
+header {
+  background-color: #d6336c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+body.light-theme header,
+body.light-theme footer {
+  background: linear-gradient(to right, #d6336c, #ff69b4);
+  color: #ffffff;
+}
+
+body.dark-theme header,
+body.dark-theme footer {
+  background: linear-gradient(to right, #35011b, #57213c);
+  color: #ffffff;
+}
+
+/* ===== Навигация ===== */
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Кнопки управления ===== */
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button {
+  background: #b02a5e;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+  background: #7a1e42;
+}
+
+/* ===== Основной контент ===== */
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 9000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ===== Секции (скрывать/показывать) ===== */
+.section {
+  display: none;
+  text-align: center;
+}
+
+.section.active {
+  display: block;
+}
+
+/* ===== Галерея в grid с двумя сверху и одной снизу ===== */
+.gallery-grid {
+  max-width: 9000px; /* Можно увеличить, если хочешь шире */
+  width: 100%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  justify-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+
+.gallery-grid .flip-card {
+  width: 100%;
+  height: 2500px;
+  perspective: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+ 
+  margin: 0;
+}
+
+/* Две карточки сверху */
+.gallery-grid .flip-card:nth-child(1),
+.gallery-grid .flip-card:nth-child(2) {
+  width: 300px;
+  height: 400px;
+}
+
+/* Нижняя карточка — занимает две колонки и по центру */
+.gallery-grid .flip-card:nth-child(3) {
+  grid-column: 1 / -1;  /* занять обе колонки */
+  width: 300px;           /* ширина по желанию */
+  height: 400px;
+}
+
+.gallery-grid .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+.gallery-grid .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.gallery-grid .flip-card-front,
+.gallery-grid .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-grid .flip-card-front {
+  background-color: #fce4ec;
+}
+
+.gallery-grid .flip-card-front img {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-grid .flip-card-back {
+  background-color: #fce4ec;
+  color: #330022;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  flex-direction: column;
+}
+
+body.dark-theme .gallery-grid .flip-card-back {
+  background-color: #3a0030;
+  color: #ffe6f0;
+}
+
+/* ===== Цитаты ===== */
+.quotes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quotes-container .flip-card {
+  width: 280px;
+  height: 200px;
+  background-color: transparent;
+  perspective: 1000px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.quotes-container .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+}
+
+.quotes-container .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.quotes-container .flip-card-front,
+.quotes-container .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #330022;
+}
+
+.quotes-container .flip-card-front {
+  background-color: #ffe6f0;
+  border-left: 4px solid #ff66a3;
+}
+
+.quotes-container .flip-card-back {
+  background-color: #fff0f6;
+  transform: rotateY(180deg);
+  color: #330022;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.quotes-container .flip-card-back img {
+  max-width: 80%;
+  max-height: 120px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+body.dark-theme .quotes-container .flip-card-back {
+  background-color: #3a0030;
+  color: #ffe6f0;
+}
+
+/* ===== "Обо мне" ===== */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.about-box {
+  background-color: #fce4ec;
+  border-left: 6px solid #d6336c;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  color: #330022;
+}
+
+.about-box h3 {
+  margin-top: 0;
+  color: #d6336c;
+}
+
+body.dark-theme .about-box {
+  background-color: #3a0030;
+  border-left: 6px solid #ff66a3;
+  color: #ffe6f0;
+}
+
+body.dark-theme .about-box h3 {
+  color: #ff99cc;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Мобильная адаптация ===== */
+@media (max-width: 300px) {
+  header {
+    padding: 1rem 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  .controls {
+    gap: 0.5rem;
+  }
+
+  .controls button {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .gallery-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует все карточки */
+    gap: 1rem;
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    box-sizing: border-box;
+  }
+
+  .gallery-grid .flip-card {
+    width: 60%; /* Занимает 90% ширины экрана */
+    max-width: 250px;
+    height: 200px;
+  }
+
+  .gallery-grid .flip-card-back {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .quotes-container {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .quotes-container .flip-card {
+    width: 90vw;
+    height: 160px;
+  }
+
+  .quotes-container .flip-card-front,
+  .quotes-container .flip-card-back {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .quotes-container .flip-card-back img {
+    max-height: 90px;
+  }
+
+  .about-container {
+    padding: 0 0.5rem;
+  }
+}
