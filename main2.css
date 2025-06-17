@@ -1,4 +1,4 @@
-/* ===== Общие сбросы и шрифты ===== */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ body.dark-theme {
   color: #ffe6f0;
 }
 
-/* ===== Хедер ===== */
+
 header {
   background-color: #d6336c;
   color: white;
@@ -46,7 +46,6 @@ body.dark-theme footer {
   color: #ffffff;
 }
 
-/* ===== Навигация ===== */
 nav ul {
   display: flex;
   gap: 1.5rem;
@@ -68,7 +67,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ===== Кнопки управления ===== */
+
 .controls {
   display: flex;
   gap: 1rem;
@@ -91,7 +90,7 @@ nav a:hover {
   background: #7a1e42;
 }
 
-/* ===== Основной контент ===== */
+
 main {
   flex: 1;
   padding: 2rem;
@@ -100,7 +99,6 @@ main {
   box-sizing: border-box;
 }
 
-/* ===== Секции (скрывать/показывать) ===== */
 .section {
   display: none;
   text-align: center;
@@ -110,10 +108,9 @@ main {
   display: block;
 }
 
-/* ===== Галерея в grid с двумя сверху и одной снизу ===== */
+
 .gallery-grid {
-  max-width: 9000px; /* Можно увеличить, если хочешь шире */
-  width: 100%;
+  max-width: 90px; 
   margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -138,17 +135,16 @@ main {
   margin: 0;
 }
 
-/* Две карточки сверху */
+
 .gallery-grid .flip-card:nth-child(1),
 .gallery-grid .flip-card:nth-child(2) {
   width: 300px;
   height: 400px;
 }
 
-/* Нижняя карточка — занимает две колонки и по центру */
 .gallery-grid .flip-card:nth-child(3) {
-  grid-column: 1 / -1;  /* занять обе колонки */
-  width: 300px;           /* ширина по желанию */
+  grid-column: 1 / -1;  
+  width: 300px;        
   height: 400px;
 }
 
@@ -290,7 +286,7 @@ body.dark-theme .quotes-container .flip-card-back {
   color: #ffe6f0;
 }
 
-/* ===== "Обо мне" ===== */
+
 .about-container {
   display: flex;
   flex-direction: column;
@@ -324,14 +320,14 @@ body.dark-theme .about-box h3 {
   color: #ff99cc;
 }
 
-/* ===== Footer ===== */
+
 footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
 }
 
-/* ===== Мобильная адаптация ===== */
+
 @media (max-width: 300px) {
   header {
     padding: 1rem 0.5rem;
@@ -365,7 +361,7 @@ footer {
   .gallery-grid {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрирует все карточки */
+    align-items: center; 
     gap: 1rem;
     padding: 0;
     margin: 0 auto;
@@ -374,7 +370,7 @@ footer {
   }
 
   .gallery-grid .flip-card {
-    width: 60%; /* Занимает 90% ширины экрана */
+    width: 60%;
     max-width: 250px;
     height: 200px;
   }
